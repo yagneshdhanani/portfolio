@@ -1,0 +1,147 @@
+[
+  {
+    "slug": "meridian",
+    "name": "Meridian",
+    "category": "Full Stack",
+    "description": "A multi-tenant SaaS operations platform processing product events in real time — tenant dashboards, self-serve onboarding, and system health visibility for operations teams.",
+    "problem": "Product and ops teams each maintained their own one-off dashboards, causing reporting fragmentation and slow response when customer health degraded.",
+    "solution": "Built a shared platform with event-driven ingestion, tenant-scoped reporting views, and an operational health layer — one surface for all teams.",
+    "impact": "Unified reporting across 15+ tenants, cut dashboard maintenance overhead, and gave ops teams real-time visibility into onboarding and system status.",
+    "features": [
+      "Tenant-scoped analytics dashboards",
+      "Event ingestion pipeline via Kafka",
+      "Self-serve customer onboarding flow",
+      "Operational health cards and alerting"
+    ],
+    "architecture": [
+      "React dashboard renders tenant-filtered views with live data polling",
+      "Spring Boot REST API enforces tenant boundaries and owns reporting logic",
+      "Kafka pipeline handles async product event ingestion at scale",
+      "PostgreSQL stores normalized tenant, onboarding, and usage data"
+    ],
+    "tech": ["React", "Spring Boot", "Kafka", "PostgreSQL", "Docker", "AWS"],
+    "github": "",
+    "live": "",
+    "featured": true
+  },
+  {
+    "slug": "rec-engine",
+    "name": "RecEngine",
+    "category": "Full Stack",
+    "description": "An AI-powered product recommendation microservice embedded in a Java backend — scores item relevance per user context and surfaces ranked lists through a REST API.",
+    "problem": "Product listings were static and untargeted; teams needed personalized recommendations without adding a separate ML platform to maintain.",
+    "solution": "Embedded OpenAI completions inside a Spring Boot microservice that builds context from user history and inventory, then returns ranked product lists through a clean API.",
+    "impact": "Improved product listing accuracy by 40% in A/B testing; zero additional infrastructure cost by running inside existing Java services.",
+    "features": [
+      "Context-aware OpenAI prompt assembly",
+      "Per-request ranking with score explanations",
+      "REST API for frontend and partner integrations",
+      "PostgreSQL query layer for user and inventory context"
+    ],
+    "architecture": [
+      "Spring Boot microservice owns recommendation request lifecycle",
+      "OpenAI API called with structured context built from DB query results",
+      "PostgreSQL stores user history, preferences, and product catalog",
+      "Redis caches ranked results to avoid redundant API calls for repeat queries"
+    ],
+    "tech": ["Spring Boot", "OpenAI API", "PostgreSQL", "Redis", "Docker"],
+    "github": "",
+    "live": ""
+  },
+  {
+    "slug": "prism-ui",
+    "name": "Prism UI",
+    "category": "Open Source",
+    "description": "An accessible, themeable React component library built on Radix primitives — shared across product teams to replace one-off UI implementations.",
+    "problem": "Teams were rebuilding the same buttons, modals, and forms in every product surface with inconsistent keyboard behavior and no shared accessibility baseline.",
+    "solution": "Extracted a library of composable components from production code, wrapped Radix primitives for complex interactions, and published it as an internal npm package with Storybook docs.",
+    "impact": "Reduced duplicated UI code across three product surfaces and gave teams a consistent accessibility and interaction baseline from day one.",
+    "features": [
+      "Accessible primitives via Radix (dialog, popover, select)",
+      "Design token system for theming light and dark modes",
+      "Storybook documentation with interactive examples",
+      "TypeScript props API with strict variant typing"
+    ],
+    "architecture": [
+      "React components expose stable props API consumed by app teams",
+      "Radix primitives handle keyboard navigation and ARIA attributes",
+      "CSS variables drive theme tokens, overridable per product",
+      "Rollup bundles tree-shakeable ESM and CJS outputs"
+    ],
+    "tech": ["React", "TypeScript", "Radix", "Storybook"],
+    "github": "",
+    "live": ""
+  },
+  {
+    "slug": "trackboard",
+    "name": "TrackBoard",
+    "category": "Frontend",
+    "description": "A real-time logistics operations dashboard with live shipment status, WebSocket-driven updates, and interactive charts — built for operations teams managing high-volume order flows.",
+    "problem": "Operations teams tracked shipment status through disconnected tools, causing delayed responses and manual status reconciliation during peak order periods.",
+    "solution": "Built a single-page operations dashboard that streams live shipment events via WebSocket and visualizes order pipeline health with interactive charts.",
+    "impact": "Reduced status reconciliation time for ops teams and gave supervisors live visibility into order pipeline bottlenecks without page refreshes.",
+    "features": [
+      "Live shipment status via WebSocket stream",
+      "Order pipeline visualization with Chart.js",
+      "Alert panel for delayed or failed shipments",
+      "Filterable table with real-time row updates"
+    ],
+    "architecture": [
+      "React SPA manages dashboard state and chart lifecycle",
+      "WebSocket connection streams shipment events from backend",
+      "Firebase Realtime Database backs the event stream for low-latency delivery",
+      "Chart.js renders order pipeline metrics updated on each event"
+    ],
+    "tech": ["React", "TypeScript", "WebSockets", "Firebase", "Chart.js"],
+    "github": "",
+    "live": ""
+  },
+  {
+    "slug": "conduit",
+    "name": "Conduit",
+    "category": "Full Stack",
+    "description": "A typed API gateway exposing REST and GraphQL surfaces for downstream services — with Redis-backed rate limiting and per-client request controls.",
+    "problem": "Frontend teams were integrating against inconsistent backend contracts across several microservices, leading to over-fetching, SDK drift, and rate limit incidents.",
+    "solution": "Built a Node.js gateway that normalises upstream service contracts into a single typed REST + GraphQL surface and enforces per-client rate limits via Redis.",
+    "impact": "Reduced frontend integration drift and gave product teams a stable, predictable API contract with observable rate limit behavior.",
+    "features": [
+      "REST and GraphQL gateway over existing microservices",
+      "Per-client rate limiting with Redis sliding window",
+      "Request logging and latency tracking via middleware",
+      "Environment-based client credential management"
+    ],
+    "architecture": [
+      "Node.js gateway normalises multiple upstream service contracts",
+      "GraphQL schema stitched over REST endpoints for product queries",
+      "Redis stores sliding window counters for per-client rate limits",
+      "Express middleware layer handles auth, logging, and error normalisation"
+    ],
+    "tech": ["Node.js", "GraphQL", "Redis", "Express", "Docker"],
+    "github": "",
+    "live": ""
+  },
+  {
+    "slug": "sentinel",
+    "name": "Sentinel",
+    "category": "Open Source",
+    "description": "A lightweight Go CLI that watches Kubernetes cluster events and routes filtered operational signals to Slack — without flooding channels with low-value noise.",
+    "problem": "Engineering teams needed cluster event visibility but every existing solution either missed events or created alert fatigue by forwarding too much noise.",
+    "solution": "Built a small Go CLI that connects to the Kubernetes event API, classifies events by severity and relevance, and sends concise Slack messages only for actionable signals.",
+    "impact": "Teams gained reliable cluster visibility without Slack fatigue — critical events surfaced within seconds, routine churn silently dropped.",
+    "features": [
+      "Kubernetes event stream via client-go watch API",
+      "Severity and namespace-based filtering rules",
+      "Slack block-kit message formatting per event type",
+      "Single YAML config for namespaces, filters, and routing"
+    ],
+    "architecture": [
+      "Go CLI connects to kube-apiserver via client-go with leader-election for HA",
+      "Event classifier maps reason codes to severity levels via config rules",
+      "Slack adapter constructs block-kit payloads and posts via webhook",
+      "Local config file controls watched namespaces and filter thresholds"
+    ],
+    "tech": ["Go", "Kubernetes", "client-go", "Slack API"],
+    "github": "",
+    "live": ""
+  }
+]

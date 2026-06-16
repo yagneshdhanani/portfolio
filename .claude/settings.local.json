@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(npx eslint *)",
+      "Bash(claude mcp *)",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio minimal professional warm neutral monochrome\" --domain color -n 6)",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"minimal editorial clean swiss typographic\" --domain style -n 5)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(lsof -i :5173 -sTCP:LISTEN -n -P)",
+      "Bash(ps -o command= -p 15391)",
+      "mcp__visualize__read_me",
+      "mcp__visualize__show_widget",
+      "Bash(pdftotext /Users/agusmac/Desktop/Code/portfolio/assets/resume.pdf -)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -sI http://localhost:5173/assets/resume.pdf)",
+      "Bash(npm audit *)",
+      "Skill(code-review)",
+      "Skill(code-review:*)"
+    ]
+  }
+}

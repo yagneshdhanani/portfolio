@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yagneshdhanani.vercel.app/sitemap.xml

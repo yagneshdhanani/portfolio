@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Yagnesh Dhanani — Senior Software Engineer. Backend systems, full-stack web apps, and cloud-native platforms." />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <title>Yagnesh Dhanani — Software Engineer</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yagneshdhanani.vercel.app/" />
+  <meta property="og:title" content="Yagnesh Dhanani — Software Engineer" />
+  <meta property="og:description"
+    content="Senior Software Engineer Specializing in backend systems, full-stack web apps, and cloud-native platforms." />
+  <meta property="og:image" content="https://yagneshdhanani.vercel.app/hero-preview.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@yagneshdhanani" />
+  <meta name="twitter:title" content="Yagnesh Dhanani — Software Engineer" />
+  <meta name="twitter:description"
+    content="Senior Software Engineer Specializing in backend systems, full-stack web apps, and cloud-native platforms." />
+  <meta name="twitter:image" content="https://yagneshdhanani.vercel.app/hero-preview.png" />
+
+  <!-- Set theme before first paint to avoid a flash of the wrong mode -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme')
+        var dark = stored
+          ? stored === 'dark'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.classList.toggle('dark', dark)
+      } catch (e) { }
+    })()
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
