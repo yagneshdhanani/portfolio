@@ -21,9 +21,7 @@ Personal portfolio built with **React + Vite**, featuring a monochrome design sy
 
 ## 🖥️ Preview
 
-> Screenshot or GIF goes here — drop `hero-preview.png` into `/public` and update this line.
-
-![Portfolio Preview](/public/hero-preview.png)
+👉 **[yagneshdhanani.vercel.app](https://yagneshdhanani.vercel.app)**
 
 ---
 
