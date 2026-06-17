@@ -277,7 +277,7 @@ export function Hero() {
                 {/* Tech */}
                 <motion.div
                   variants={item}
-                  className="grid grid-cols-3 gap-3 sm:flex sm:flex-nowrap sm:gap-8"
+                  className="hero-tech-row flex flex-nowrap gap-3 sm:gap-8"
                 >
                   {TOP_SKILLS.map((skill) => (
                     <SkillChip

@@ -390,6 +390,12 @@
     max-width: 464px;
   }
 
+  .hero-tech-row {
+    max-width: 464px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .hero-social-link {
     width: 100%;
     padding-left: 1.25rem;
@@ -419,6 +425,11 @@
   @media (min-width: 640px) {
     .hero-meta-mid {
       display: inline;
+    }
+
+    .hero-tech-row {
+      max-width: none;
+      width: auto;
     }
   }
 
