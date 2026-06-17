@@ -16,7 +16,7 @@ export const Card = forwardRef(function Card(
     <Component
       ref={ref}
       className={cn(
-        'rounded-xl border border-border bg-surface',
+        'relative rounded-xl border border-border bg-surface',
         'transition-[transform,border-color,background-color] duration-200 ease-out',
         interactive && 'cursor-pointer hover:-translate-y-1 hover:border-border-strong hover:bg-surface-2',
         className,

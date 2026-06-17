@@ -3,15 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useScrollHeader } from "../../hooks/useScrollHeader";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import { NAV_ITEMS } from "../../content/site.config";
 import { cn } from "../../lib/cn";
-
-const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
 
 const navLinkBase =
   "relative rounded-sm py-1 text-sm font-medium transition-colors duration-150 cursor-pointer after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:bg-foreground after:transition-transform after:duration-300 after:ease-out after:content-[''] focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-4 focus-visible:ring-offset-background";

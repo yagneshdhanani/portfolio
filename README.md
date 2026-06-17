@@ -23,6 +23,17 @@ Personal portfolio built with **React + Vite**, featuring a monochrome design sy
 
 👉 **[yagneshdhanani.vercel.app](https://yagneshdhanani.vercel.app)**
 
+<table>
+  <tr>
+    <td align="center"><b>🌙 Dark Mode — Desktop</b></td>
+    <td align="center"><b>☀️ Light Mode — Mobile</b></td>
+  </tr>
+  <tr>
+    <td><img src=".github/screenshots/dark-desktop.png" alt="Dark mode desktop" width="480"/></td>
+    <td><img src=".github/screenshots/light-mobile.png" alt="Light mode mobile" width="220"/></td>
+  </tr>
+</table>
+
 ---
 
 ## 🚀 Tech Stack

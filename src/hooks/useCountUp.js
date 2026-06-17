@@ -9,7 +9,7 @@ import { useState, useEffect, useRef } from 'react'
  * @param {number} [duration=1400] - Animation duration in ms
  * @returns {number} current animated value
  */
-export function useCountUp(target, triggered, duration = 1400) {
+export function useCountUp(target, triggered, duration = 1400, rerunKey = 0) {
   const [count, setCount] = useState(0)
   const rafRef = useRef(null)
 
@@ -25,6 +25,7 @@ export function useCountUp(target, triggered, duration = 1400) {
       return
     }
 
+    setCount(0)
     const start = performance.now()
 
     const tick = (now) => {
@@ -40,7 +41,7 @@ export function useCountUp(target, triggered, duration = 1400) {
 
     rafRef.current = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(rafRef.current)
-  }, [triggered, target, duration])
+  }, [triggered, target, duration, rerunKey])
 
   return count
 }

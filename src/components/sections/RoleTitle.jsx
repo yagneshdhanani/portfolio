@@ -81,7 +81,7 @@ export function RoleTitle() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.55, duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-      className="mt-5 font-mono uppercase text-muted role-title"
+      className="mt-5 font-mono uppercase text-muted role-title whitespace-nowrap"
     >
       <span aria-label={ROLE_TEXT}>{ROLE_TEXT.slice(0, chars)}</span>
       <span

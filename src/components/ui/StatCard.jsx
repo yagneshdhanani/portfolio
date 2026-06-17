@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card } from './Card'
 import { cn } from '../../lib/cn'
 import { useInView } from '../../hooks/useInView'
@@ -14,10 +14,21 @@ function parseValue(value) {
 export function StatCard({ icon: Icon, value, label, className = '', ...props }) {
   const { number, suffix } = parseValue(value)
   const { ref, hasBeenInView } = useInView({ threshold: 0.3 })
-  const count = useCountUp(number ?? 0, hasBeenInView && number !== null)
+  const [rerunKey, setRerunKey] = useState(0)
+  const count = useCountUp(number ?? 0, hasBeenInView && number !== null, 1400, rerunKey)
+
+  function handleMouseEnter() {
+    if (number !== null) setRerunKey(k => k + 1)
+  }
 
   return (
-    <Card ref={ref} className={cn('p-5 sm:p-6', className)} {...props}>
+    <Card
+      ref={ref}
+      interactive
+      className={cn('h-full p-5 sm:p-6', className)}
+      {...props}
+      onMouseEnter={handleMouseEnter}
+    >
       {Icon && (
         <Icon className="mb-4 h-5 w-5 text-subtle" aria-hidden="true" />
       )}

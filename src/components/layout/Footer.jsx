@@ -1,19 +1,17 @@
 import React from "react";
 import { Github, Linkedin, Twitter } from "lucide-react";
-import { FOOTER_SOCIALS } from "../../content/site.config";
+import { FOOTER_SOCIALS, OWNER } from "../../content/site.config";
 
 const SOCIAL_ICONS = { GitHub: Github, LinkedIn: Linkedin, Twitter };
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-(--content-max-width) flex-col items-center justify-between gap-6 px-6 py-10 sm:flex-row">
         <p className="font-mono text-xs text-subtle">
-          © {currentYear}{" "}
-          <span className="font-medium text-foreground">Yagnesh Dhanani</span> —
-          Built with React
+          © {OWNER.builtYear ?? 2025}{" "}
+          <span className="font-medium text-foreground">{OWNER.name}</span> —
+          Built with {OWNER.builtWith}
         </p>
 
         <div className="flex items-center gap-2">

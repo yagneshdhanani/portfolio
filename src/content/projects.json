@@ -7,6 +7,10 @@
     "problem": "Product and ops teams each maintained their own one-off dashboards, causing reporting fragmentation and slow response when customer health degraded.",
     "solution": "Built a shared platform with event-driven ingestion, tenant-scoped reporting views, and an operational health layer — one surface for all teams.",
     "impact": "Unified reporting across 15+ tenants, cut dashboard maintenance overhead, and gave ops teams real-time visibility into onboarding and system status.",
+    "outcomes": [
+      "15+ tenants unified",
+      "Real-time health visibility"
+    ],
     "features": [
       "Tenant-scoped analytics dashboards",
       "Event ingestion pipeline via Kafka",
@@ -32,6 +36,10 @@
     "problem": "Product listings were static and untargeted; teams needed personalized recommendations without adding a separate ML platform to maintain.",
     "solution": "Embedded OpenAI completions inside a Spring Boot microservice that builds context from user history and inventory, then returns ranked product lists through a clean API.",
     "impact": "Improved product listing accuracy by 40% in A/B testing; zero additional infrastructure cost by running inside existing Java services.",
+    "outcomes": [
+      "40% better listing accuracy",
+      "No new ML platform"
+    ],
     "features": [
       "Context-aware OpenAI prompt assembly",
       "Per-request ranking with score explanations",
@@ -56,6 +64,10 @@
     "problem": "Teams were rebuilding the same buttons, modals, and forms in every product surface with inconsistent keyboard behavior and no shared accessibility baseline.",
     "solution": "Extracted a library of composable components from production code, wrapped Radix primitives for complex interactions, and published it as an internal npm package with Storybook docs.",
     "impact": "Reduced duplicated UI code across three product surfaces and gave teams a consistent accessibility and interaction baseline from day one.",
+    "outcomes": [
+      "3 product surfaces aligned",
+      "Shared accessibility baseline"
+    ],
     "features": [
       "Accessible primitives via Radix (dialog, popover, select)",
       "Design token system for theming light and dark modes",
@@ -80,6 +92,10 @@
     "problem": "Operations teams tracked shipment status through disconnected tools, causing delayed responses and manual status reconciliation during peak order periods.",
     "solution": "Built a single-page operations dashboard that streams live shipment events via WebSocket and visualizes order pipeline health with interactive charts.",
     "impact": "Reduced status reconciliation time for ops teams and gave supervisors live visibility into order pipeline bottlenecks without page refreshes.",
+    "outcomes": [
+      "Live shipment visibility",
+      "Less manual reconciliation"
+    ],
     "features": [
       "Live shipment status via WebSocket stream",
       "Order pipeline visualization with Chart.js",
@@ -104,6 +120,10 @@
     "problem": "Frontend teams were integrating against inconsistent backend contracts across several microservices, leading to over-fetching, SDK drift, and rate limit incidents.",
     "solution": "Built a Node.js gateway that normalises upstream service contracts into a single typed REST + GraphQL surface and enforces per-client rate limits via Redis.",
     "impact": "Reduced frontend integration drift and gave product teams a stable, predictable API contract with observable rate limit behavior.",
+    "outcomes": [
+      "Stable API contract",
+      "Observable rate limits"
+    ],
     "features": [
       "REST and GraphQL gateway over existing microservices",
       "Per-client rate limiting with Redis sliding window",
@@ -128,6 +148,10 @@
     "problem": "Engineering teams needed cluster event visibility but every existing solution either missed events or created alert fatigue by forwarding too much noise.",
     "solution": "Built a small Go CLI that connects to the Kubernetes event API, classifies events by severity and relevance, and sends concise Slack messages only for actionable signals.",
     "impact": "Teams gained reliable cluster visibility without Slack fatigue — critical events surfaced within seconds, routine churn silently dropped.",
+    "outcomes": [
+      "Critical events in seconds",
+      "Reduced alert noise"
+    ],
     "features": [
       "Kubernetes event stream via client-go watch API",
       "Severity and namespace-based filtering rules",

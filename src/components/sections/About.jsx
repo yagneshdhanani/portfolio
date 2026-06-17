@@ -51,7 +51,7 @@ export function About({ showHeader = true }) {
         {/* Stats */}
         <div className="grid grid-cols-2 gap-4">
           {STAT_DATA.map((stat, i) => (
-            <AnimatedSection key={stat.label} delay={i * 0.08}>
+            <AnimatedSection key={stat.label} delay={i * 0.08} className="h-full">
               <StatCard icon={STAT_ICONS[i]} value={stat.value} label={stat.label} />
             </AnimatedSection>
           ))}

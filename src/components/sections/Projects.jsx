@@ -54,6 +54,8 @@ function ProjectLink({ href, label, children, variant = 'secondary' }) {
 }
 
 function ProjectCard({ project, featured, onOpen }) {
+  const outcomes = Array.isArray(project.outcomes) ? project.outcomes.slice(0, 2) : []
+
   return (
     <Card
       as="button"
@@ -90,6 +92,19 @@ function ProjectCard({ project, featured, onOpen }) {
       <p className="mt-3 text-sm leading-relaxed text-muted">
         {project.description}
       </p>
+
+      {outcomes.length ? (
+        <div className="mt-5 grid gap-2 sm:grid-cols-2">
+          {outcomes.map((outcome) => (
+            <span
+              key={outcome}
+              className="rounded-md border border-border bg-background px-3 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted"
+            >
+              {outcome}
+            </span>
+          ))}
+        </div>
+      ) : null}
 
       {/* Tech */}
       <div className="mt-5 flex flex-wrap gap-2">
@@ -218,6 +233,18 @@ function ProjectDetailModal({ project, onClose }) {
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 {project.impact}
               </p>
+              {Array.isArray(project.outcomes) && project.outcomes.length ? (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.outcomes.map((outcome) => (
+                    <span
+                      key={outcome}
+                      className="rounded-md border border-border bg-background px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-muted"
+                    >
+                      {outcome}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
             </Card>
 
             <div className="grid gap-8 sm:grid-cols-2">
