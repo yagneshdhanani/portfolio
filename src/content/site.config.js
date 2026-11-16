@@ -12,7 +12,7 @@ export const OWNER = {
   name: "Yagnesh Dhanani",
   initials: "YD.",
   email: "yagneshdhanani791@gmail.com",
-  role: "Senior Software Engineer · · ·",
+  role: "Software Engineer · · ·",
   /** Short availability status shown in the hero badge */
   status: "Available for work",
   /** One-liner tech credit shown in the footer */
@@ -68,15 +68,10 @@ export const BIO = [
 export const ABOUT_PARAGRAPHS = [
   "I'm a software engineer who cares about {emphasisStart}the parts users never see{emphasisEnd} — the data models, the failure modes, the latency budgets. Good products are built on systems that stay calm under load.",
   "Over the last few years I've shipped backend platforms, full-stack web apps, and cloud infrastructure across startups and product teams. My focus is {emphasisStart}reliability and clean delivery{emphasisEnd}: code that's understood at 3am, not just at the demo.",
-  "Outside of feature work I contribute to open source and write about the tradeoffs behind {emphasisStart}architecture decisions{emphasisEnd} — because the best design is the one your team can keep evolving.",
 ];
 
-export const STATS = [
-  { value: "4+", label: "Years Experience" },
-  { value: "20+", label: "Projects Built" },
-  { value: "15+", label: "Happy Clients" },
-  { value: "5+", label: "Open Source" },
-];
+/** Optional stat cards for the About section. Leave empty to hide the grid. */
+export const STATS = [];
 
 // ---------------------------------------------------------------------------
 // Skills section

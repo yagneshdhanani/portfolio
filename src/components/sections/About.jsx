@@ -29,6 +29,7 @@ function parseParagraph(text) {
 }
 
 export function About({ showHeader = true }) {
+  const hasStats = STAT_DATA.length > 0
   return (
     <AnimatedSection>
       {showHeader ? (
@@ -40,7 +41,13 @@ export function About({ showHeader = true }) {
         </>
       ) : null}
 
-      <div className={cn('grid grid-cols-1 gap-10 md:grid-cols-[3fr_2fr] md:gap-14', showHeader && 'mt-12')}>
+      <div
+        className={cn(
+          'grid grid-cols-1 gap-10 md:gap-14',
+          hasStats ? 'md:grid-cols-[3fr_2fr]' : 'max-w-3xl',
+          showHeader && 'mt-12'
+        )}
+      >
         {/* Narrative */}
         <div className="flex flex-col gap-5 text-base leading-relaxed text-muted sm:text-lg">
           {ABOUT_PARAGRAPHS.map((text, i) => (
@@ -48,14 +55,16 @@ export function About({ showHeader = true }) {
           ))}
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 gap-4">
-          {STAT_DATA.map((stat, i) => (
-            <AnimatedSection key={stat.label} delay={i * 0.08} className="h-full">
-              <StatCard icon={STAT_ICONS[i]} value={stat.value} label={stat.label} />
-            </AnimatedSection>
-          ))}
-        </div>
+        {/* Stats — rendered only when site.config.js lists any */}
+        {hasStats ? (
+          <div className="grid grid-cols-2 gap-4">
+            {STAT_DATA.map((stat, i) => (
+              <AnimatedSection key={stat.label} delay={i * 0.08} className="h-full">
+                <StatCard icon={STAT_ICONS[i]} value={stat.value} label={stat.label} />
+              </AnimatedSection>
+            ))}
+          </div>
+        ) : null}
       </div>
     </AnimatedSection>
   )
